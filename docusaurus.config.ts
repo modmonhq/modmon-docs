@@ -149,7 +149,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Modmon, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Modmon Foundation. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
