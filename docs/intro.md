@@ -202,3 +202,12 @@ LOG_LEVEL={{ENV === 'production' ? 'error' : 'debug'}}
 - Sets up networking and dependencies
 - Configures volumes and secrets
 
+## Is Modmon for me?
+
+That is up to you - modmon aims to be as flexible as possible, but cannot meet all requirements for everyone! Larger organizations with full-time devops teams may be better off using K8s or custom pipelines. Our project must remain accessible for small/independent teams, so it may lack a few "enterprise" features.
+
+But, if you'd lke to reduce long-term pain of onboarding developers, maintaining clusters and app deployments, feel free to hop on!
+
+## License
+
+Modmon is [MIT Licensed](https://en.wikipedia.org/wiki/MIT_License)
