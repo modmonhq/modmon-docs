@@ -1,0 +1,13 @@
+{
+  "position": 1.8,
+  "label": "Projects",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Projects overview"
+  },
+  "customProps": {
+    "description": "This description can be used in the swizzled DocCard"
+  }
+}
