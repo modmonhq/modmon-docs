@@ -83,7 +83,12 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Documentation',
+          label: 'Docs',
+        },
+        {
+          to: '#',
+          label: 'API Docs',
+          position: 'left',
         },
         {to: '#', label: 'Changelog', position: 'left'},
         {
@@ -97,11 +102,15 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
             {
-              label: 'Documentation',
+              label: 'Docs',
               to: '/docs/intro',
+            },
+            {
+              label: 'API Docs',
+              to: '#',
             },
           ],
         },
