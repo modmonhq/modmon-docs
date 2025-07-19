@@ -14,7 +14,7 @@ It's inspired by [Lando](https://lando.dev), which simplifies *local* PHP develo
 
 Modmon consists of a few components - we will overview those here.
 
-## Components
+## Software Components
 
 - [modmon](https://github.com/modmonhq/modmon): This is the package installed in your master repo providing the full local
   developer experience and ability to manage remote clusters.
@@ -52,13 +52,13 @@ A cluster is either a single node or multiple nodes working together as one. Clu
 You will always deploy to a "cluster", even if it is just one node.
 :::
 
-It would be considered best practices to use different clusters for different environments, but it is possible to run multiple environments on a single cluster.
+It would be considered best practices to use different clusters for different environments, but it is possible to run multiple environments on a single cluster. Clusters can also run multiple projects.
 
 ### Project
 
-A project is a distinct set of services to deploy, all defined in the Master Repo (see below).
+A project is a distinct set of services to deploy, all defined in a Master Repo (see below).
 
-### Master Repo
+### Project Master Repo
 
 Every project needs a master repo, which contains a few (light-touch) config files. The master repo serves as the central control point for your entire deployment ecosystem, containing configuration, access controls, and orchestration logic while keeping actual application code separate.
 The master repo follows a "configuration as code" philosophy, where your infrastructure, deployment settings, and team access are all version-controlled and easily reproducible across environments. Most of it can be auto-generated using CLI tools, flows, and recipes.
