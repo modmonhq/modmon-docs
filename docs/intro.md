@@ -27,6 +27,37 @@ Modmon consists of a few components - we will overview those here.
 
 ## Principles
 
+### Environment
+
+An environment is a distinct instance of your application, running in a specified manner.
+
+### Node
+
+A node is a machine, virtual or physical, that runs `modmon-server`, Docker, and the deployed code.
+
+:::warning
+When initializing a node, it should always be started as a blank or "fresh" server, as unpredictable results may happen otherwise.
+:::
+
+During setup, modmon-server will:
+1. Update all OS packages
+2. Apply security settings / harden the installation
+3. Install Docker / Swarm / Compose (depending on Cluster settings)
+
+### Cluster
+
+A cluster is either a single node or multiple nodes working together as one. Clusters operate independently of each other, but can all be managed together via the CLI and UI.
+
+:::tip
+You will always deploy to a "cluster", even if it is just one node.
+:::
+
+It would be considered best practices to use different clusters for different environments, but it is possible to run multiple environments on a single cluster.
+
+### Project
+
+A project is a distinct set of services to deploy, all defined in the Master Repo (see below).
+
 ### Master Repo
 
 Every project needs a master repo, which contains a few (light-touch) config files. The master repo serves as the central control point for your entire deployment ecosystem, containing configuration, access controls, and orchestration logic while keeping actual application code separate.
