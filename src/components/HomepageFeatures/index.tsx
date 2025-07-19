@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Sync Environments',
+    title: 'Environmental Sync',
     Svg: require('@site/static/img/arrows-rotate.svg').default,
     description: (
       <>
