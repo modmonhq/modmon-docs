@@ -2,46 +2,203 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Modmon Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+:::danger[Pre-alpha software]
+Modmon is pre-alpha software, very much in-development - we do NOT recommend using it for production use at the moment.
+:::
 
-## Getting Started
+The first question is: what is Modmon? Yet another tool / technology we have to learn? The answer is - yes and no! The goal of the modmon project is to provide small/medium teams with a simplified deployment system that can be deployed anywhere - even Raspberry Pis - with a Gitops-focused approach. Not every project has the resources for a full-time devops person/team - Modmon can fill in a few gaps to simplify devops operations for most apps.
 
-Get started by **creating a new site**.
+It's inspired by [Lando](https://lando.dev), which simplifies *local* PHP development and Docker. Modmon aims to simplify and unify *production* development of any app, running in containers or as a binary on servers. It is heavily customizable depending on your needs and workflows (and hopes to become even more customizable over time).
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Modmon consists of a few components - we will overview those here.
 
-### What you'll need
+## Components
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- [modmon](https://github.com/modmonhq/modmon): This is the package installed in your master repo providing the full local
+  developer experience and ability to manage remote clusters.
+- [modmon-server](https://github.com/modmonhq/modmon-server): This is a lightweight Go application that runs on production
+  clusters to manage and maintain the servers and deployments.
+- [modmon-cli](https://github.com/modmonhq/modmon-ui): This is the CLI tool for managing your application and clusters. It is
+  included by default in `modmon`. It connects securely via SSH tunnels to remote servers, meaning no ports need to be opened to use.
+- [modmon-ui](https://github.com/modmonhq/modmon-ui): This is a Vue UI for managing your application and clusters. It can
+  be installed automatically by modmon during initial setup or added later. It wraps all CLI utilities into a webapp.
 
-## Generate a new site
+## Principles
 
-Generate a new Docusaurus site using the **classic template**.
+### Master Repo
 
-The classic template will automatically be added to your project after you run the command:
+Every project needs a master repo, which contains a few (light-touch) config files. The master repo serves as the central control point for your entire deployment ecosystem, containing configuration, access controls, and orchestration logic while keeping actual application code separate.
+The master repo follows a "configuration as code" philosophy, where your infrastructure, deployment settings, and team access are all version-controlled and easily reproducible across environments. Most of it can be auto-generated using CLI tools, flows, and recipes.
 
-```bash
-npm init docusaurus@latest my-website classic
+#### Repository Structure
+```
+my-awesome-project/
+├── .modmon/
+│   ├── modmon.yaml          # Main configuration (see below)
+│   ├── access.yaml          # User access controls (see below)
+│   └── pubkeys/             # SSH public keys directory
+│       ├── alex             # Alex's primary SSH key
+│       ├── alex-laptop      # Alex's laptop SSH key
+│       ├── sarah            # Sarah's SSH key
+│       ├── mike             # Mike's SSH key
+├── .env/
+│   ├── development.env     # Local development environment
+│   ├── integration.env     # Integration testing environment
+│   ├── uat.env             # User acceptance testing environment
+│   ├── staging.env         # Staging environment
+│   └── production.env      # Production environment
+├── depot/                  # Auto-managed repositories (git-ignored)
+│   ├── frontend-app/       # Cloned from git@github.com:mycompany/frontend-app.git
+│   ├── api-service/        # Cloned from git@github.com:mycompany/api-service.git
+│   └── notification-service/ # Cloned from git@github.com:mycompany/notification-service.git
+├── recipes/               # Recipes are scripts for various purposes (WIP)
+├── .gitignore             # Excludes depot/ and generated files
+├── install.sh             # Auto-generated bootstrap script
+└── docker-stack.yaml      # Auto-generated Docker Swarm configuration
+```
+#### Core Configuration Files
+
+`.modmon/modmon.yaml` - The heart of your deployment configuration
+
+```yaml
+# Example modmon.yaml structure
+version: 1.0
+deploy:
+  type: 'swarm'
+  provider: 'aws'
+
+environments:
+  local:
+  staging:
+    deploy-on:
+      - created: 'git:tag'
+  production:
+    deploy-on:
+      - hook: 'staging_tests_passed'
+
+repos:
+  my-app:
+    url: git@github.com:mycompany/my-app.git
+    type: docker
+    image: my-app:{tag}
+    database:
+      databases:
+        - app_db
+      users:
+        - app_user
+    services:
+      web:
+        ports:
+          - target: 8080
+            published: 80
+        depends_on:
+          - postgres
+          - redis
+
+swarm:
+  services:
+    postgres:
+      image: postgres:17
+    redis:
+      image: redis:7-alpine
+
+databases:
+  app_db:
+    type: 'postgres'
+    users:
+      app_user:
+        access: full
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+`.modmon/access.yaml` - Team access and permission management
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+```yaml
+# Example access.yaml structure
+users:
+  alex:
+    roles: admin
+    keys: ['alex', 'alex-laptop']
+    email: 'alex@example.com'
+  sarah:
+    roles: maintain
+    keys: 'sarah'
+    email: 'sarah@example.com'
+  mike:
+    roles: developer
+    keys: 'mike'
+    email: 'mike@example.com'
+roles:
+  admin:
+    super: true
+  maintain:
+    - perm:deploy
+    - perm:manage_users
+    - role:developer
+  developer:
+    - perm:read_logs
+    - perm:restart_services
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+#### The Depot Directory
+The depot/ directory is where Modmon automatically clones your project repositories during setup. This approach provides several benefits:
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+- Separation of Concerns: Configuration and code remain separate but coordinated
+- Atomic Operations: All repositories are managed together, ensuring consistency
+- Git Independence: Each repo maintains its own Git history while being orchestrated centrally
+- Easy Onboarding: New team members get the entire project with one command
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+#### Environment Management
+Environment file stubs in .env/ serve as templates that Modmon uses to generate environment-specific configurations:
+```dotenv
+# This file contains scripted overwrites of various ENV values for modmon
+
+APP_KEY={{SCRIPTS['app-key']}}
+APP_ENV={{ENV}}
+APP_DEBUG={{ENV != 'production' && ENV != 'staging'}}
+APP_URL={{URL}}
+FEATURE_FLAGS={{ENV === 'production'}}
+
+DB_CONNECTION=postgres
+DB_HOST={{DB['app_db'].HOST}}
+DB_PORT={{DB['app_db'].PORT}}
+DB_DATABASE={{DB['app_db'].DB}}
+DB_USERNAME={{DB['app_db'].USER}}
+DB_PASSWORD={{DB['app_db'].PASS}}
+
+CACHE_DB_DATABASE={{DB['cache_db'].DB}}
+CACHE_DB_PASSWORD={{DB['cache_db'].PASS}}
+
+REDIS_HOST={{SERVICES['redis'].HOST}}
+REDIS_PORT={{SERVICES['redis'].PORT}}
+
+ELASTICSEARCH_HOST={{SERVICES['elasticsearch'].URL}}
+ELASTICSEARCH_INDEX={{ENV}}_search_index
+
+MAIL_MAILER=smtp
+MAIL_HOST={{SECRETS['mail_host']}}
+MAIL_PORT=587
+MAIL_USERNAME={{SECRETS['mail_username']}}
+MAIL_PASSWORD={{SECRETS['mail_password']}}
+MAIL_ENCRYPTION=tls
+
+LOG_CHANNEL=stack
+LOG_LEVEL={{ENV === 'production' ? 'error' : 'debug'}}
+```
+
+#### Bootstrap and Generation
+`install.sh` - Automatically generated script that:
+
+- Clones all repositories defined in modmon.yaml
+- Sets up local development environment
+- Installs dependencies and configures services
+- Generates necessary Docker configurations
+
+`docker-stack.yaml` | `docker-compose.yaml` - Auto-generated Docker Swarm/Compose file that:
+
+- Defines services based on your modmon.yaml configuration
+- Applies environment-specific overrides
+- Sets up networking and dependencies
+- Configures volumes and secrets
+
