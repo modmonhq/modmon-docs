@@ -1,11 +1,11 @@
 {
-  "position": 2.5,
-  "label": "Modmon Server",
+  "position": 2.4,
+  "label": "Clusters",
   "collapsible": true,
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "title": "Server overview"
+    "title": "Cluster overview"
   },
   "customProps": {
     "description": "This description can be used in the swizzled DocCard"

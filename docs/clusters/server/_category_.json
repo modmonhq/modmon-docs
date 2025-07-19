@@ -1,0 +1,13 @@
+{
+  "position": 4,
+  "label": "modmon-server",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "modmon-server overview"
+  },
+  "customProps": {
+    "description": "This description can be used in the swizzled DocCard"
+  }
+}
