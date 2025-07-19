@@ -35,10 +35,6 @@ An environment is a distinct instance of your application, running in a specifie
 
 A node is a machine, virtual or physical, that runs `modmon-server`, Docker, and the deployed code.
 
-:::warning
-When initializing a node, it should always be started as a blank or "fresh" server, as unpredictable results may happen otherwise.
-:::
-
 During setup, modmon-server will:
 1. Update all OS packages
 2. Apply security settings / harden the installation
