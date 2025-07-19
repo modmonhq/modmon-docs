@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Modmon Documentation',
-  tagline: 'Siplifying deployment of modular monloith applications',
+  title: 'Modmon Developer Site',
+  tagline: 'Simplifying deployment of modular monolith applications',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -73,7 +73,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Modmon Documentation',
+      title: 'Modmon for Developers',
       logo: {
         alt: 'Modmon Logo',
         src: 'img/logo.svg',
