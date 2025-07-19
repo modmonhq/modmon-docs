@@ -85,6 +85,7 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },
+        {to: '#', label: 'Changelog', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
