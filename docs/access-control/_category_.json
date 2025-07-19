@@ -1,0 +1,13 @@
+{
+  "position": 3.2,
+  "label": "Access Control",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Access control overview"
+  },
+  "customProps": {
+    "description": "This description can be used in the swizzled DocCard"
+  }
+}

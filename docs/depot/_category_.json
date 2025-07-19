@@ -1,0 +1,13 @@
+{
+  "position": 2.4,
+  "label": "Depot",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Depot overview"
+  },
+  "customProps": {
+    "description": "This description can be used in the swizzled DocCard"
+  }
+}
