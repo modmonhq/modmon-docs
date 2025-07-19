@@ -36,6 +36,7 @@ An environment is a distinct instance of your application, running in a specifie
 A node is a machine, virtual or physical, that runs `modmon-server`, Docker, and the deployed code.
 
 During setup, modmon-server will:
+
 1. Update all OS packages
 2. Apply security settings / harden the installation
 3. Install Docker / Swarm / Compose (depending on Cluster settings)
@@ -60,7 +61,8 @@ Every project needs a master repo, which contains a few (light-touch) config fil
 The master repo follows a "configuration as code" philosophy, where your infrastructure, deployment settings, and team access are all version-controlled and easily reproducible across environments. Most of it can be auto-generated using CLI tools, flows, and recipes.
 
 #### Repository Structure
-```
+
+```filetree
 my-awesome-project/
 ├── .modmon/
 │   ├── modmon.yaml          # Main configuration (see below)
@@ -85,6 +87,7 @@ my-awesome-project/
 ├── install.sh             # Auto-generated bootstrap script
 └── docker-stack.yaml      # Auto-generated Docker Swarm configuration
 ```
+
 #### Core Configuration Files
 
 `.modmon/modmon.yaml` - The heart of your deployment configuration
@@ -169,6 +172,7 @@ roles:
 ```
 
 #### The Depot Directory
+
 The depot/ directory is where Modmon automatically clones your project repositories during setup. This approach provides several benefits:
 
 - Separation of Concerns: Configuration and code remain separate but coordinated
@@ -177,7 +181,9 @@ The depot/ directory is where Modmon automatically clones your project repositor
 - Easy Onboarding: New team members get the entire project with one command
 
 #### Environment Management
+
 Environment file stubs in .env/ serve as templates that Modmon uses to generate environment-specific configurations:
+
 ```dotenv
 # This file contains scripted overwrites of various ENV values for modmon
 
@@ -215,6 +221,7 @@ LOG_LEVEL={{ENV === 'production' ? 'error' : 'debug'}}
 ```
 
 #### Bootstrap and Generation
+
 `install.sh` - Automatically generated script that:
 
 - Clones all repositories defined in modmon.yaml

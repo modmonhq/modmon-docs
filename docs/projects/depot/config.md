@@ -9,17 +9,20 @@ Depots can be interacted with via the CLI or by YAML.
 
 ## CLI
 
-#### Add a depot item
+### Add a depot item
+
 ```shell
 modmon depot add
 ```
 
-#### Remove a depot item
+### Remove a depot item
+
 ```shell
 modmon depot remove <repo-name>
 ```
 
 ## YAML
+
 ```yaml
 # ./modman/depot.yaml
 frontend:

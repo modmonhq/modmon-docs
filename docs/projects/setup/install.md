@@ -5,3 +5,4 @@ sidebar_label: Installation
 
 # Installation
 
+We reccomend installing
