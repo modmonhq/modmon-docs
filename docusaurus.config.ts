@@ -73,9 +73,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Modmon Documentation',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Modmon Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -125,6 +125,10 @@ const config: Config = {
         {
           title: 'More',
           items: [
+            {
+              label: 'Website',
+              to: 'https://modmon.org',
+            },
             {
               label: 'Blog',
               to: 'https://blog.modmon.org',
