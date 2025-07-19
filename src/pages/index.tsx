@@ -33,8 +33,8 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="Modmon is a set of tooling to ease the deployment of modular monoliths for small to medium teams.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

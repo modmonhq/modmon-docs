@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Gitops Emphasis',
+    Svg: require('@site/static/img/code-branch.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Modmon aims to be the glue holding your git repository and deployments together while maintaining simplicity.
+        This also means it is configured and managed flat-file (via YAML files in your master repo)
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Sync Environments',
+    Svg: require('@site/static/img/arrows-rotate.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Maintaining multiple complex environments, including local, can be tricky. Modmon simplifies that
+        by keeping all environments identical - from local to staging to production.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Sever Management / Monitoring',
+    Svg: require('@site/static/img/server.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Modmon will set up, maintain, and monitor your servers and deployments, so you can focus on what matters:
+        your code and application.
       </>
     ),
   },
