@@ -1,11 +1,11 @@
 {
-  "position": 3.5,
-  "label": "CLI",
+  "position": 3.8,
+  "label": "UI",
   "collapsible": true,
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "title": "CLI"
+    "title": "UI overview"
   },
   "customProps": {
     "description": "This description can be used in the swizzled DocCard"

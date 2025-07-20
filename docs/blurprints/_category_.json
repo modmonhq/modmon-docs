@@ -1,11 +1,11 @@
 {
-  "position": 3.5,
-  "label": "CLI",
+  "position": 3.1,
+  "label": "Blueprints",
   "collapsible": true,
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "title": "CLI"
+    "title": "Blueprints overview"
   },
   "customProps": {
     "description": "This description can be used in the swizzled DocCard"
