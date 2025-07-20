@@ -6,6 +6,21 @@ sidebar_position: 4
 
 Great DX is more than just nice onboarding. Modmon also features a few tools to help you build the best possible local DX for your complicated projects.
 
+## Faster Onboarding
+
+Onboarding new developers to a project can be a painful process, especially when you take the route of monolith or modular monolith architecture. Modmon aims to make this process as smooth as possible, by automating the setup of local development environments.
+
+Developers will simply clone the master repo, and run the following:
+
+```shell
+npm install -g @modmon/cli
+git clone git@github.com:mycompany/my-app.git # Clone the master repo
+cd my-app
+modmon install
+```
+
+This will download all the repositories and dependencies, and create a local development environment with all the needed services.
+
 ## Modmon CLI
 
 Experiment too hard and now everything is broken locally? Run a single command to rebuild your project and get back to work.
