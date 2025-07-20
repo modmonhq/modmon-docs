@@ -94,6 +94,10 @@ my-awesome-project/
 
 #### Core Configuration Files
 
+:::info[Active development]
+The structure of the configuration files is still being finalized. The following are provided as an example for now.
+:::
+
 `.modmon/modmon.yaml` - The heart of your deployment configuration
 
 ```yaml
