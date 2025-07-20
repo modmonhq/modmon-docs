@@ -20,6 +20,7 @@ We have built-in support for things that help with self-hosting:
 - Tunnels (such as Ngrok or Cloudflare Tunnel)
 - Secrets (such as Hashicorp Vault)
 - Monitoring (such as Prometheus, Grafana, etc)
+- And an unlimited number of other services from the community recipe library (WIP)
 
 We include these "big league" tools with simplified pre-configured setups and configs.
 
