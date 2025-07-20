@@ -9,7 +9,7 @@ You can define custom error and maintenance pages for your projects. These shoul
 
 During any sort of downtime on the stack, all traffic will be routed to the custom maintenance page.
 
-In your project's `modmon.yaml` file, you can define the following:
+In your project's `.modmon/project.yaml` file, you can define the following:
 
 With this project file structure:
 
