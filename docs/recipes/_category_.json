@@ -1,11 +1,11 @@
 {
-  "position": 3.5,
-  "label": "Access Control",
+  "position": 3.2,
+  "label": "Recipes",
   "collapsible": true,
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "title": "Access control overview"
+    "title": "Recipes overview"
   },
   "customProps": {
     "description": "This description can be used in the swizzled DocCard"
