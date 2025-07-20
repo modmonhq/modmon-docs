@@ -57,12 +57,19 @@ It would be considered best practices to use different clusters for different en
 
 ### Project
 
-A project is a distinct set of services to deploy, all defined in a Master Repo (see below).
+A project is a distinct set of services to deploy, all defined in a Master Repo (see [below](#master-repo)).
 
-### Project Master Repo
+### Blueprints
 
-Every project needs a master repo, which contains a few (light-touch) config files. The master repo serves as the central control point for your entire deployment ecosystem, containing configuration, access controls, and orchestration logic while keeping actual application code separate.
-The master repo follows a "configuration as code" philosophy, where your infrastructure, deployment settings, and team access are all version-controlled and easily reproducible across environments. Most of it can be auto-generated using CLI tools, flows, and recipes.
+Blueprints are a simple, declarative way to define what your stack consists of - your app's components, services, and dependencies. They can be created using the Modmon CLI, UI, or by editing YAML files directly. Blueprints are ultimately compiled into docker-compose.yaml or docker-stack.yaml files that Modmon uses to deploy your app.
+
+### Recipes
+
+Recipes determine how to deploy your app. While blueprints focus on what your stack contains, recipes are more focused on the deployment steps and processes to get your app running in different environments.
+
+### Master Repo
+
+Every project needs a master repo, which contains a few (light-touch) config files. The master repo serves as the central control point for your entire deployment ecosystem, containing configuration, access controls, and orchestration logic while keeping actual application code separate. The master repo follows a "configuration as code" philosophy, where your infrastructure, deployment settings, and team access are all version-controlled and easily reproducible across environments. Most of it can be auto-generated using CLI tools, flows, prefabs, and recipes.
 
 #### Repository Structure
 
