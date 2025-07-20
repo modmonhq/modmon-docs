@@ -118,12 +118,12 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: '#',
+              label: 'GitHub Discussions',
+              href: 'https://github.com/modmonhq/modmon/discussions',
             },
             {
               label: 'Discord',
-              href: '#',
+              href: 'https://discord.gg/YVsfzBf4Jt',
             },
             {
               label: 'X',
