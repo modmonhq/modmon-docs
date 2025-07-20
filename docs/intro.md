@@ -193,7 +193,6 @@ APP_DEBUG={{ENV != 'production' && ENV != 'staging'}}
 APP_URL={{URL}}
 FEATURE_FLAGS={{ENV === 'production'}}
 
-DB_CONNECTION=postgres
 DB_HOST={{DB['app_db'].HOST}}
 DB_PORT={{DB['app_db'].PORT}}
 DB_DATABASE={{DB['app_db'].DB}}
