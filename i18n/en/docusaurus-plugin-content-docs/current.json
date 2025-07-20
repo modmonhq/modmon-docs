@@ -1,0 +1,70 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Projects": {
+    "message": "Projects",
+    "description": "The label for category Projects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Projects.link.generated-index.title": {
+    "message": "Projects overview",
+    "description": "The generated-index page title for category Projects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Setting up a project": {
+    "message": "Setting up a project",
+    "description": "The label for category Setting up a project in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Setting up a project.link.generated-index.title": {
+    "message": "Setup overview",
+    "description": "The generated-index page title for category Setting up a project in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Depot": {
+    "message": "Depot",
+    "description": "The label for category Depot in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Depot.link.generated-index.title": {
+    "message": "Depot overview",
+    "description": "The generated-index page title for category Depot in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Clusters": {
+    "message": "Clusters",
+    "description": "The label for category Clusters in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Clusters.link.generated-index.title": {
+    "message": "Cluster overview",
+    "description": "The generated-index page title for category Clusters in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Storage Locations": {
+    "message": "Storage Locations",
+    "description": "The label for category Storage Locations in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Cluster Types": {
+    "message": "Cluster Types",
+    "description": "The label for category Cluster Types in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.modmon-server": {
+    "message": "modmon-server",
+    "description": "The label for category modmon-server in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.modmon-server.link.generated-index.title": {
+    "message": "modmon-server overview",
+    "description": "The generated-index page title for category modmon-server in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Access Control": {
+    "message": "Access Control",
+    "description": "The label for category Access Control in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Access Control.link.generated-index.title": {
+    "message": "Access control overview",
+    "description": "The generated-index page title for category Access Control in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CLI Usage": {
+    "message": "CLI Usage",
+    "description": "The label for category CLI Usage in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CLI Usage.link.generated-index.title": {
+    "message": "CLI overview",
+    "description": "The generated-index page title for category CLI Usage in sidebar tutorialSidebar"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "Modmon for Developers",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Modmon Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.API Docs": {
+    "message": "API Docs",
+    "description": "Navbar item with label API Docs"
+  },
+  "item.label.Changelog": {
+    "message": "Changelog",
+    "description": "Navbar item with label Changelog"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
