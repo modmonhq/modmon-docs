@@ -29,7 +29,7 @@ The following is a list of the technologies used per component of modmon.
 
 ## Rationale
 
-By nature, the creator of the project is a PHP developer. But not all devs have PHP installed and the ones that don't use it are less likely to try a project that uses it. Making any piece of modmon in PHP would require all devs to set up a PHP environment, which was seen as a barrier to entry. The upcoming official recipe repository will be written in PHP/Laravel, however!
+By nature, the creator of the project is a PHP developer. But not all devs have PHP installed and the ones that don't use it are less likely to try a project that uses it. Making any piece of modmon in PHP would require all devs to set up a PHP environment, which was seen as a barrier to entry. The upcoming official prefab/community recipe repository will be written in PHP/Laravel, however, and the "marketing" / .org site will be a Statamic site. Those will be fully open-sourced when they are stable.
 
 On the other hand, almost every PHP dev has Node installed. So, Node was chosen as the primary platform for client-side development.
 
