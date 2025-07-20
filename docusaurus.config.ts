@@ -92,7 +92,7 @@ const config: Config = {
         },
         {to: '#', label: 'Changelog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/modmonhq/modmon',
           label: 'GitHub',
           position: 'right',
         },
