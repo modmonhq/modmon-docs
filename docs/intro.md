@@ -263,7 +263,7 @@ While this portion is truly in our vision of the project, it's not something we 
 
 ### Infrastructure Provisioning
 
-- Provision cloud servers, VPCs, or networking infrastructure (you'll need to set up the nodes first)
+- Provision cloud servers, VPCs, or networking infrastructure (you'll need to set up the nodes first - future versions will include this)
 - Manage DNS records or SSL certificate generation/renewal (future versions will include this)
 - Handle cloud-specific services like AWS RDS, S3, or load balancers
 
