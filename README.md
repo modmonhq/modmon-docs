@@ -1,41 +1,43 @@
-# Website
+# Modmon Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Documentation for [Modmon](https://github.com/modmonhq/modmon) - a simplified deployment system for small/medium teams with a GitOps-focused approach.
 
-## Installation
+## 🚧 Work in Progress
 
-```bash
-yarn
-```
+**These docs are very much a work-in-progress.** Modmon is currently in pre-alpha development, and this documentation site is being actively developed alongside the project.
 
-## Local Development
+## 📝 Doc-Driven Development
 
-```bash
-yarn start
-```
+Modmon follows a **doc-driven development** approach. This means:
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+- Documentation is written first to define features and workflows
+- A complete suite of docs will guide and kickoff each development cycle
+- The docs serve as both specification and user guide
 
-## Build
+This approach ensures that features are well-thought-out and user-focused before implementation begins.
 
-```bash
-yarn build
-```
+## 🛠️ Development
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
+This site is built with [Docusaurus](https://docusaurus.io/).
 
 ```bash
-USE_SSH=true yarn deploy
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+
+# Deploy to Cloudflare Pages
+npm run deploy
 ```
 
-Not using SSH:
+## 🤝 Contributing
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+Since the project is doc-driven, contributions to documentation are especially valuable! See our [GitHub Discussions](https://github.com/modmonhq/modmon/discussions) to share feedback and ideas.
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## 📄 License
+
+MIT Licensed
