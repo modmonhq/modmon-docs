@@ -241,6 +241,56 @@ That is up to you - modmon aims to be as flexible as possible, but cannot meet a
 
 But, if you'd lke to reduce long-term pain of onboarding developers, maintaining clusters and app deployments, feel free to hop on!
 
+## What won't modmon do?
+
+While Modmon can help with a lot, there are a few things you will need to do yourself (for now):
+
+### Dockerize your app
+
+Something that is up to you to do as a developer is Dockerize your app. Modmon will help you run the container and supporting services, but it relies on your app already running in a container.
+
+A future version will aim to make it easy to Dockerize your app using prebuilt images and tools like:
+
+- [Paketo Buildpacks](https://paketo.io/) - Cloud Native Buildpacks for popular languages
+- [Dockerize](https://github.com/jwilder/dockerize) - Utility to simplify running applications in docker containers.
+- [Spin](https://github.com/serversideup/spin) - PHP / Laravel / Symfony dockerization made easy
+- [Nixpacks](https://github.com/railwayapp/nixpacks) - Auto-detects and builds Docker images from source code
+- [Buildpacks](https://buildpacks.io/) - Cloud Native Buildpacks for automatic containerization
+- [Docker Init](https://docs.docker.com/engine/reference/commandline/init/) - Docker's official tool for generating Dockerfiles
+- [s2i (Source-to-Image)](https://github.com/openshift/source-to-image) - Builds Docker images from source code
+
+While this portion is truly in our vision of the project, it's not something we can do properly without input from the community. Everybody builds apps differently. If you have any ideas, please let us know!
+
+### Infrastructure Provisioning
+
+- Provision cloud servers, VPCs, or networking infrastructure (you'll need to set up the nodes first)
+- Manage DNS records or SSL certificate generation/renewal (future versions will include this)
+- Handle cloud-specific services like AWS RDS, S3, or load balancers
+
+### Advanced Operations
+
+- Provide comprehensive monitoring, logging, or alerting (beyond basic deployment status)
+- Implement backup strategies for your databases or persistent data beyond basic snapshots
+- Handle complex database migrations or schema management
+- Perform auto-scaling based on traffic or resource usage (future versions will include this)
+
+### CI/CD Pipeline Management
+
+- Create complex build pipelines or artifact management
+- Integrate with external testing services or quality gates
+- Manage code review workflows or branch protection rules
+
+### Security & Compliance
+
+- Implement application-level security (authentication, authorization, input validation)
+- Ensure compliance with industry standards (SOC2, HIPAA, etc.)
+- Manage secrets rotation or advanced key management
+- Perform penetration testing or security audits
+
+### Will it ever do these things?
+
+Some of these will never fit into the scope of Modmon, but for other "nice to have" features: Modmon is 100% open source and community-driven, so we welcome your ideas and contributions!
+
 ## License
 
 Modmon is [MIT Licensed](https://en.wikipedia.org/wiki/MIT_License)
