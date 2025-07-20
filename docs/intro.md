@@ -12,7 +12,7 @@ Modmon is pre-alpha software, very much in-development - we do NOT recommend usi
 We're looking for insights and ideas from the community - please share your thoughts and feedback (good or bad) on [GitHub Discussions](https://github.com/modmonhq/modmon/discussions).
 :::
 
-The first question is: what is Modmon? Yet another tool / technology we have to learn? The answer is - yes, but it will be worth it (and hopefully painless)! Imagine something as easy to use as Vercel, Netlify, Fly.io, or Laravel Cloud, but 100% open-source, self-hosted, and cloud-agnostic. Modmon doesn't reinvent the wheel - it builds upon proven technologies like Docker, Git, and containers to create a unified, simplified deployment experience that's easy enough for any developer to use.
+The first question is: what is Modmon? Yet another tool / technology we have to learn? The answer is - yes, but it will be worth it (and hopefully painless)! Imagine something as easy to use as Vercel, Netlify, Fly.io, or Laravel Cloud, but 100% open-source, self-hosted, and cloud-agnostic. Modmon doesn't reinvent the wheel - it builds upon proven technologies like Docker, Git, and containers to create a unified, simplified deployment experience that's easy enough for any developer to use, while being powerful & flexibile enough to fit many advanced use cases.
 
 The goal of the modmon project is to provide small/medium teams with a simplified deployment system that can be deployed anywhere - even Raspberry Pis - with a Gitops-focused approach. Not every project has the resources for a full-time devops person/team - Modmon can fill in a few gaps to simplify devops operations for most apps.
 
