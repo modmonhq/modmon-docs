@@ -8,6 +8,10 @@ sidebar_position: 1
 Modmon is pre-alpha software, very much in-development - we do NOT recommend using it for production use at the moment.
 :::
 
+:::tip[Help shape the future]
+We're looking for insights and ideas from the community - please share your thoughts and feedback (good or bad) on [GitHub Discussions](https://github.com/modmonhq/modmon/discussions).
+:::
+
 The first question is: what is Modmon? Yet another tool / technology we have to learn? The answer is - yes and no! The goal of the modmon project is to provide small/medium teams with a simplified deployment system that can be deployed anywhere - even Raspberry Pis - with a Gitops-focused approach. Not every project has the resources for a full-time devops person/team - Modmon can fill in a few gaps to simplify devops operations for most apps.
 
 It's inspired by [Lando](https://lando.dev), which simplifies *local* PHP development and Docker. Modmon aims to simplify and unify *production* development of any app, running in containers or as a binary on servers. It is heavily customizable depending on your needs and workflows (and hopes to become even more customizable over time).
