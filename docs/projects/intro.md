@@ -10,4 +10,5 @@ Projects fundamentally include everything you need to get a stack off the ground
 - Repositories (stored in [depot](depot/intro.md))
 - Clusters (can be [outsourced to another repo](/docs/clusters/storage-locations/cluster-repos.md))
 - [Access control](/docs/access-control/intro.md) lists
-- Deployment instructions
+- [Blueprints](/docs/blueprints/intro.md) (Services, databases, etc.)
+- [Recipes](/docs/recipes/intro.md) (Deployment instructions)
