@@ -190,6 +190,10 @@ The depot/ directory is where Modmon automatically clones your project repositor
 
 #### Environment Management
 
+:::info[Active development]
+The structure of the configuration files is still being finalized. The following are provided as an example for now.
+:::
+
 Environment file stubs in .env/ serve as templates that Modmon uses to generate environment-specific configurations:
 
 ```dotenv
