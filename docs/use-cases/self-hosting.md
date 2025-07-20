@@ -15,6 +15,7 @@ We have built-in support for things that help with self-hosting:
 - Docker Compose/Swarm
 - Deployments
 - Databases (Postgres, MySQL, MongoDB, etc)
+- Search Engines (Elasticsearch, MeiliSearch, Typesense, etc)
 - Caches (Redis, Memcached, etc)
 - Tunnels (such as Ngrok or Cloudflare Tunnel)
 - Secrets (such as Hashicorp Vault)
