@@ -26,6 +26,10 @@ We include these "big league" tools with simplified pre-configured setups and co
 
 ## Streamlined Services
 
+:::info[Active development]
+The exact syntax of the CLI is is still being finalized. The following are provided as an example for now.
+:::
+
 You can simply add things to your project with simple commands such as:
 
 ```shell
@@ -58,6 +62,10 @@ Ensuring that we always offer full support for ARM-based hardware is a top prior
 However, *you* as a developer do not need to support ARM if you do not want to within your project.
 
 ## Adding a Node
+
+:::info[Active development]
+The exact syntax of the CLI is is still being finalized. The following are provided as an example for now.
+:::
 
 Adding a node to your cluster is as simple as:
 
