@@ -16,7 +16,7 @@ The first question is: what is Modmon? Yet another tool / technology we have to 
 
 It's inspired by [Lando](https://lando.dev), which simplifies *local* PHP development and Docker, and [Coolify](https://coolify.io). Modmon aims to simplify and unify production *and* local deployment of any app, running in containers or as a binary. It is heavily customizable depending on your needs and workflows (and hopes to become even more customizable over time).
 
-Modmon consists of a few components - we will overview those here.
+Modmon consists of a few components - we will overview those below. Read more about our vision of [self hosting here](/docs/use-cases/self-hosting).
 
 ## Software Components
 
