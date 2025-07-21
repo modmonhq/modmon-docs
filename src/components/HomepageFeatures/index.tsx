@@ -11,7 +11,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Gitops Emphasis',
+    title: 'GitoOs Emphasis',
     Svg: require('@site/static/img/code-branch.svg').default,
     description: (
       <>
