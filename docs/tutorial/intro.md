@@ -35,6 +35,15 @@ We are using documentation-first approach to develop Modmon. This means that we 
 - [modmon-ui](https://github.com/modmonhq/modmon-ui): This is a Vue UI for managing your application and clusters. It can
   be installed automatically by modmon during initial setup or added later. It wraps all CLI utilities into a webapp.
 
+### Why split these out?
+
+There are a few reasons for this:
+
+- It allows us to use the best tech for each part of the stack
+- It allows certain components to be swapped out. For example, an organization may choose to run their own fork of `modmon-server` instead of using the official one. There could also be community-made alternatives to `modmon-cli` and `modmon-ui`.
+- We want to keep each component as small and focused as possible.
+- We want modmon to become more of an open standard rather than something that locks people in - so our vision is that people can replace various components of the stack with various alterative implementations, if they so choose.
+
 ## Principles
 
 ### Environment
