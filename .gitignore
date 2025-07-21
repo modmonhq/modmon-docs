@@ -27,4 +27,4 @@ yarn-error.log*
 .idea
 
 # API Docs - Auto-generated on build
-/docs/petstore
+/docs/api/

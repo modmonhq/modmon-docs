@@ -9,8 +9,8 @@ Bluerprints are a way to define what your stack consists of. They are a simple, 
 
 They can be created using the following tools:
 
-- [Modmon CLI](/docs/cli/blueprints.md)
-- [Modmon UI](/docs/ui/blueprints.md)
+- [Modmon CLI](/docs/tutorial/cli/blueprints.md)
+- [Modmon UI](/docs/tutorial/ui/blueprints.md)
 - Editing the yaml files directly
 
 At the end, they are compiled to a docker-compose.yaml or docker-stack.yaml file, which is used by Modmon to deploy your app.

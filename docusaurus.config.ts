@@ -90,7 +90,7 @@ const config: Config = {
 				{
           label: 'API Docs',
 					position: 'left',
-					to: "/docs/category/petstore-api",
+					to: "/docs/api/petstore-api",
 				},
 				{ to: '#', label: 'Changelog', position: 'left' },
 				{
@@ -108,7 +108,7 @@ const config: Config = {
 					items: [
 						{
 							label: 'Docs',
-							to: '/docs/intro',
+							to: '/docs/tutorial/intro',
 						},
 						{
 							label: 'API Docs',
@@ -273,7 +273,7 @@ const config: Config = {
         config: {
           petstore: {
             specPath: "examples/petstore.yaml",
-            outputDir: "docs/petstore",
+            outputDir: "docs/api/petstore",
             downloadUrl:
               "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
             sidebarOptions: {

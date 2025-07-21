@@ -12,7 +12,7 @@ Modmon has the ability to automatically provision resources on a few supported c
 
 ## Supported Providers
 
-- [Edge](https://edge.network/) - [Docs](/docs/providers/edge.md)
+- [Edge](https://edge.network/) - [Docs](/docs/tutorial/providers/edge.md)
 - [Vultr](https://www.vultr.com/) - Coming soon
 - [DigitalOcean](https://www.digitalocean.com/) - Coming soon
 - [Linode](https://www.linode.com/) - Coming soon
