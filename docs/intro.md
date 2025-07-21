@@ -22,6 +22,10 @@ Modmon consists of a few components - we will overview those below. Read more ab
 
 ## Software Components
 
+:::info[Doc-driven development]
+We are using documentation-first approach to develop Modmon. This means that we fully document the intended features and behaviours before developing them.
+:::
+
 - [modmon](https://github.com/modmonhq/modmon): This is the package installed in your master repo providing the full local
   developer experience and ability to manage remote clusters.
 - [modmon-server](https://github.com/modmonhq/modmon-server): This is a lightweight Go application that runs on production
