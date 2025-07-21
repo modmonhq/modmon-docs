@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"docusaurus": "docusaurus",
-		"start": "docusaurus start",
+		"start": "docusaurus gen-api-docs all && docusaurus start",
 		"build": "docusaurus gen-api-docs all && docusaurus build",
 		"swizzle": "docusaurus swizzle",
 		"deploy": "npm run build && wrangler deploy",
