@@ -15,8 +15,8 @@ Modmon has the ability to automatically provision resources on a few supported c
 - [Edge](https://edge.network/) - [Docs](/docs/providers/edge.md)
 - [Vultr](https://www.vultr.com/) - Coming soon
 - [DigitalOcean](https://www.digitalocean.com/) - Coming soon
-- [AWS](https://aws.amazon.com/) - Coming soon
 - [Linode](https://www.linode.com/) - Coming soon
+- [AWS](https://aws.amazon.com/) - Coming soon
 - [Azure](https://azure.microsoft.com/) - Coming soon
 
 ## Custom Providers
