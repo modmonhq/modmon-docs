@@ -90,7 +90,7 @@ const config: Config = {
 				{
           label: 'API Docs',
 					position: 'left',
-					to: "/docs/api/petstore-api",
+					to: "/docs/api/modmon",
 				},
 				{ to: '#', label: 'Changelog', position: 'left' },
 				{
@@ -272,8 +272,8 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           petstore: {
-            specPath: "examples/petstore.yaml",
-            outputDir: "docs/api/petstore",
+            specPath: "api-docs/modmon.yaml",
+            outputDir: "docs/api/modmon",
             downloadUrl:
               "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
             sidebarOptions: {

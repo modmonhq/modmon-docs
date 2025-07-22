@@ -1,0 +1,176 @@
+openapi: 3.1.0
+info:
+  title: Modmon API
+  description: ''
+  version: 1.0.0
+tags:
+  - name: Status
+  - name: Action
+paths:
+  /status/cluster:
+    get:
+      summary: Cluster Info
+      deprecated: false
+      description: ''
+      tags:
+        - Status
+      parameters:
+        - name: deleted
+          in: query
+          description: Include deleted nodes?
+          required: false
+          schema:
+            type: boolean
+        - name: Authorization
+          in: header
+          description: Auth methods TBD
+          required: false
+          example: TBD
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/Status'
+                    description: Overall status of the cluster
+                  nodes:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Node'
+                    description: All the nodes in a cluster
+                required:
+                  - status
+                  - nodes
+          headers: {}
+      security: []
+  /status/node/{nodeName}:
+    get:
+      summary: Node Info
+      deprecated: false
+      description: ''
+      tags:
+        - Status
+      parameters:
+        - name: nodeName
+          in: path
+          description: The name of the node, as defined in the cluster.yaml file.
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Auth methods TBD
+          required: false
+          example: TBD
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  node:
+                    $ref: '#/components/schemas/Node'
+                required:
+                  - node
+          headers: {}
+      security: []
+  /actions/cluster/restart:
+    post:
+      summary: Cluster Reboot
+      deprecated: false
+      description: Restart an entire cluster
+      tags:
+        - Action
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+          headers: {}
+      security: []
+  /actions/node/{nodeName}/reboot:
+    post:
+      summary: Node Reboot
+      deprecated: false
+      description: Restart an entire cluster
+      tags:
+        - Action
+      parameters:
+        - name: nodeName
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+          headers: {}
+      security: []
+webhooks: {}
+components:
+  schemas:
+    Node:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the node, as defined in the cluster.yaml
+        status:
+          $ref: '#/components/schemas/Status'
+        active:
+          type: boolean
+        ip:
+          type:
+            - string
+            - 'null'
+          description: Primary IPv4 Address of the node (public)
+        ip6:
+          type:
+            - string
+            - 'null'
+          description: Primary IPv6 Address of the node (public)
+      required:
+        - ip
+        - ip6
+        - name
+        - active
+        - status
+    Status:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Text description of the status
+        healthy:
+          type: boolean
+          description: Is the status considered healthy?
+        since:
+          type: string
+          description: Status has been this way since...
+      required:
+        - status
+        - healthy
+        - since
+  securitySchemes: {}
+servers: []
+security: []

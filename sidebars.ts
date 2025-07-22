@@ -19,15 +19,15 @@ const sidebars: SidebarsConfig = {
   openApiSidebar: [
     {
       type: "category",
-      label: "Petstore (Example)",
+      label: "Modmon Server API",
       link: {
         type: "generated-index",
-        title: "Petstore API (Example)",
+        title: "Modmon Server API",
         description:
-          "This is an example set of API docs from Swagger's Petstore example.",
-        slug: "/api/petstore-api"
+          "The API to get satatus and deployment information from the server.",
+        slug: "/api/modmon",
       },
-      items: require("./docs/api/petstore/sidebar.js")
+      items: require("./docs/api/modmon/sidebar.js")
     }
   ]
 };
