@@ -138,7 +138,7 @@ const config: Config = {
 						},
 						{
 							label: 'X',
-							href: '#',
+							href: 'https://x.com/ModmonHQ',
 						},
 					],
 				},
