@@ -1,7 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -47,7 +47,7 @@ const config: Config = {
 					// Remove this to remove the "edit this page" links.
 					editUrl:
 						'https://github.com/modmonhq/modmon-docs/tree/master/',
-          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
+					docItemComponent: '@theme/ApiItem', // Derived from docusaurus-theme-openapi
 				},
 				blog: {
 					showReadingTime: true,
@@ -72,6 +72,15 @@ const config: Config = {
 	],
 
 	themeConfig: {
+		algolia: {
+			appId: 'YEOIP90ZTH',
+			apiKey: '96e168b1d36e4b23b9c46111a3f2552e',
+			indexName: 'Doc Website',
+			contextualSearch: true,
+			searchParameters: {},
+			searchPagePath: 'search',
+			insights: true,
+		},
 		// Replace with your project's social card
 		image: 'img/docusaurus-social-card.jpg',
 		navbar: {
@@ -88,9 +97,9 @@ const config: Config = {
 					label: 'Docs',
 				},
 				{
-          label: 'API Docs',
+					label: 'API Docs',
 					position: 'left',
-					to: "/docs/api/modmon",
+					to: '/docs/api/modmon',
 				},
 				{ to: '#', label: 'Changelog', position: 'left' },
 				{
@@ -263,30 +272,30 @@ const config: Config = {
 			},
 		],
 	} satisfies Preset.ThemeConfig,
-  
-  plugins: [
-    [
-      "docusaurus-plugin-openapi-docs",
-      {
-        id: "openapi",
-        docsPluginId: "classic",
-        config: {
-          petstore: {
-            specPath: "api-docs/modmon.yaml",
-            outputDir: "docs/api/modmon",
-            downloadUrl:
-              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
-        } satisfies Plugin.PluginOptions,
-      },
-    ],
-  ],
 
-  themes: ["docusaurus-theme-openapi-docs"],
+	plugins: [
+		[
+			'docusaurus-plugin-openapi-docs',
+			{
+				id: 'openapi',
+				docsPluginId: 'classic',
+				config: {
+					petstore: {
+						specPath: 'api-docs/modmon.yaml',
+						outputDir: 'docs/api/modmon',
+						downloadUrl:
+							'https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml',
+						sidebarOptions: {
+							groupPathsBy: 'tag',
+							categoryLinkSource: 'tag',
+						},
+					} satisfies OpenApiPlugin.Options,
+				} satisfies Plugin.PluginOptions,
+			},
+		],
+	],
+
+	themes: ['docusaurus-theme-openapi-docs'],
 };
 
 export default config;
