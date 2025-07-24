@@ -84,7 +84,7 @@ const config: Config = {
 		// Replace with your project's social card
 		image: 'img/docusaurus-social-card.jpg',
 		navbar: {
-			title: 'Modmon for Developers',
+			title: 'for Developers',
 			logo: {
 				alt: 'Modmon Logo',
 				src: 'img/logo.svg',
